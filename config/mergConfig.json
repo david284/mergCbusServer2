@@ -59,8 +59,7 @@
       "name": "CANPanel"
     },
     "A520": {
-      "name": "CANMIO",
-      "component": "canmio"
+      "name": "CANMIO"
     },
     "A521": {
       "name": "CANACE8MIO"

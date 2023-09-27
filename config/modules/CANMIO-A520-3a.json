@@ -1,0 +1,347 @@
+{
+  "moduleName":"CANMIO",
+  "nodeVariables": [
+    {
+      "type": "NodeVariableTabs",
+      "tabPanels": [
+        { "displayTitle": "Globals",
+          "items": [
+            {
+              "type": "NodeVariableSlider",
+              "nodeVariableIndex": 1,
+              "displayTitle": "Produced startup event Delay",
+              "displaySubTitle": "0.1 second steps, starting at 2",
+              "displayUnits": "seconds",
+              "displayScale": 0.1,
+              "displayOffset":2
+            },
+            {
+              "type": "NodeVariableNumber",
+              "nodeVariableIndex": 2,
+              "displayTitle": "Heartbeat Delay",
+              "displaySubTitle": "not yet implemented",
+              "displayUnits": "milliseconds"
+            },
+            {
+              "type": "NodeVariableNumber",
+              "nodeVariableIndex": 3,
+              "displayTitle": "Servo speed",
+              "displaySubTitle": "If >234 MULTI servo is moved this amount every 100ms. If <= 234 this is number of 20ms periods per step",
+              "displayUnits": "milliseconds"
+            },
+            {
+              "type": "NodeVariableBitArray",
+              "nodeVariableIndex": 4,
+              "displayTitle": "PORTB Pullups",
+              "displaySubTitle": "",
+              "bitCollection":[
+                {"bitPosition": 0, "label": "Port B0"},
+                {"bitPosition": 1, "label": "Port B1"},
+                {"bitPosition": 2, "label": "Port B2"},
+                {"bitPosition": 3, "label": "Port B3"},
+                {"bitPosition": 4, "label": "Port B4"},
+                {"bitPosition": 5, "label": "Port B5"},
+                {"bitPosition": 6, "label": "Port B6"},
+                {"bitPosition": 7, "label": "Port B7"}
+              ]
+            },
+            {
+              "type": "NodeVariableSlider",
+              "nodeVariableIndex": 5,
+              "displayTitle": "Time delay between response messages",
+              "displaySubTitle": "1 millisecond steps",
+              "displayUnits": "milliseconds"
+            }
+          ]
+        },
+        { "displayTitle": "Channel 1",
+          "items": [
+            {
+              "type": "NodeVariableSelect",
+              "nodeVariableIndex": 16,
+              "displayTitle": "I/O type",
+              "displaySubTitle": "",
+              "options": [
+              {"label": "INPUT", "value": 0},
+              {"label": "OUTPUT", "value": 1},
+              {"label": "SERVO", "value": 2},
+              {"label": "BOUNCE", "value": 3},
+              {"label": "MULTI", "value": 4},
+              {"label": "ANALOGUE", "value": 5},
+              {"label": "MAGNET", "value": 6}
+              ]
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"input type only",
+              "visibilityLogic":{ "nv":16, "equals": 0 },
+              "nodeVariableIndex": 18,
+              "displayTitle": "ON delay",
+              "displaySubTitle": "input specific",
+              "displayUnits": "milliseconds",
+              "displayScale": 5
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"output type only",
+              "visibilityLogic":{ "nv":16, "equals": 1 },
+              "nodeVariableIndex": 18,
+              "displayTitle": "Pulse duration",
+              "displaySubTitle": "output specific",
+              "displayUnits": "seconds",
+              "displayScale": 0.1
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"servo type only",
+              "visibilityLogic":{ "nv":16, "equals": 2 },
+              "nodeVariableIndex": 18,
+              "displayTitle": "OFF position",
+              "displaySubTitle": "servo specific",
+              "displayUnits": "steps"
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"bounce type only",
+              "visibilityLogic":{ "nv":16, "equals": 3 },
+              "nodeVariableIndex": 18,
+              "displayTitle": "UPPER position",
+              "displaySubTitle": "bounce specific",
+              "displayUnits": "steps"
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"multi type only",
+              "visibilityLogic":{ "nv":16, "equals": 4 },
+              "nodeVariableIndex": 18,
+              "displayTitle": "num pos",
+              "displaySubTitle": "multi specific",
+              "displayUnits": "steps"
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"input type only",
+              "visibilityLogic":{ "nv":16, "equals": 0 },
+              "nodeVariableIndex": 19,
+              "displayTitle": "OFF delay",
+              "displaySubTitle": "input specific",
+              "displayUnits": "milliseconds",
+              "displayScale": 5
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"output type only",
+              "visibilityLogic":{ "nv":16, "equals": 1 },
+              "nodeVariableIndex": 19,
+              "displayTitle": "Flash period",
+              "displaySubTitle": "output specific",
+              "displayUnits": "seconds",
+              "displayScale": 0.1
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"servo type only",
+              "visibilityLogic":{ "nv":16, "equals": 2 },
+              "nodeVariableIndex": 19,
+              "displayTitle": "ON position",
+              "displaySubTitle": "servo specific",
+              "displayUnits": "steps"
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"bounce type only",
+              "visibilityLogic":{ "nv":16, "equals": 3 },
+              "nodeVariableIndex": 19,
+              "displayTitle": "LOWER position",
+              "displaySubTitle": "bounce specific",
+              "displayUnits": "steps"
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"multi type only",
+              "visibilityLogic":{ "nv":16, "equals": 4 },
+              "nodeVariableIndex": 19,
+              "displayTitle": "pos 1",
+              "displaySubTitle": "multi specific",
+              "displayUnits": "steps"
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"servo type only",
+              "visibilityLogic":{ "nv":16, "equals": 2 },
+              "nodeVariableIndex": 20,
+              "displayTitle": "OFF to ON speed",
+              "displaySubTitle": "servo specific",
+              "displayUnits": ""
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"bounce type only",
+              "visibilityLogic":{ "nv":16, "equals": 3 },
+              "nodeVariableIndex": 20,
+              "displayTitle": "Bounce coefficient",
+              "displaySubTitle": "bounce specific",
+              "displayUnits": " %"
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"multi type only",
+              "visibilityLogic":{ "nv":16, "equals": 4 },
+              "nodeVariableIndex": 20,
+              "displayTitle": "pos 2",
+              "displaySubTitle": "multi specific",
+              "displayUnits": "steps"
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"servo type only",
+              "visibilityLogic":{ "nv":16, "equals": 2 },
+              "nodeVariableIndex": 21,
+              "displayTitle": "ON to OFF speed",
+              "displaySubTitle": "servo specific",
+              "displayUnits": ""
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"bounce type only",
+              "visibilityLogic":{ "nv":16, "equals": 3 },
+              "nodeVariableIndex": 21,
+              "displayTitle": "Pull speed",
+              "displaySubTitle": "bounce specific",
+              "displayUnits": "milliseconds",
+              "displayScale": 20
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"multi type only",
+              "visibilityLogic":{ "nv":16, "equals": 4 },
+              "nodeVariableIndex": 21,
+              "displayTitle": "pos 3",
+              "displaySubTitle": "multi specific",
+              "displayUnits": "steps"
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"bounce type only",
+              "visibilityLogic":{ "nv":16, "equals": 3 },
+              "nodeVariableIndex": 22,
+              "displayTitle": "Pull pause",
+              "displaySubTitle": "bounce specific",
+              "displayUnits": "milliseconds",
+              "displayScale": 20
+            },
+            {
+              "type": "NodeVariableSlider",
+              "comment":"multi type only",
+              "visibilityLogic":{ "nv":16, "equals": 4 },
+              "nodeVariableIndex": 22,
+              "displayTitle": "pos 4",
+              "displaySubTitle": "multi specific",
+              "displayUnits": "steps"
+            },
+            {
+              "type": "NodeVariableBitArray",
+              "nodeVariableIndex": 17,
+              "displayTitle": "Flags",
+              "displaySubTitle": "input specific flags",
+              "visibilityLogic":{ "nv":16, "equals": 0 },
+              "bitCollection":[
+                {"bitPosition": 0, "label": "TRIGGER_INVERTED"},
+                {"bitPosition": 3, "label": "DISABLE_OFF"},
+                {"bitPosition": 4, "label": "TOGGLE"},
+                {"bitPosition": 5, "label": "INPUT_DISABLE_SOD_RESPONSE"},
+                {"bitPosition": 6, "label": "EVENT_INVERTED"}
+              ]
+            },
+            {
+              "type": "NodeVariableBitArray",
+              "nodeVariableIndex": 17,
+              "displayTitle": "Flags",
+              "displaySubTitle": "output specific flags",
+              "visibilityLogic":{ "nv":16, "equals": 1 },
+              "bitCollection":[
+                {"bitPosition": 0, "label": "TRIGGER_INVERTED"},
+                {"bitPosition": 2, "label": "STARTUP"},
+                {"bitPosition": 3, "label": "DISABLE_OFF"},
+                {"bitPosition": 5, "label": "ACTION_INVERTED"},
+                {"bitPosition": 6, "label": "EVENT_INVERTED"},
+                {"bitPosition": 7, "label": "ACTION_EXPEDITED"}
+              ]
+            },
+            {
+              "type": "NodeVariableBitArray",
+              "nodeVariableIndex": 17,
+              "displayTitle": "Flags",
+              "displaySubTitle": "servo specific flags",
+              "visibilityLogic":{ "nv":16, "equals": 2 },
+              "bitCollection":[
+                {"bitPosition": 0, "label": "TRIGGER_INVERTED"},
+                {"bitPosition": 1, "label": "CUTOFF"},
+                {"bitPosition": 2, "label": "STARTUP"},
+                {"bitPosition": 4, "label": "PULLUP"},
+                {"bitPosition": 5, "label": "ACTION_INVERTED"},
+                {"bitPosition": 6, "label": "EVENT_INVERTED"}
+              ]
+            },
+            {
+              "type": "NodeVariableBitArray",
+              "nodeVariableIndex": 17,
+              "displayTitle": "Flags",
+              "displaySubTitle": "bounce specific flags",
+              "visibilityLogic":{ "nv":16, "equals": 3 },
+              "bitCollection":[
+                {"bitPosition": 0, "label": "TRIGGER_INVERTED"},
+                {"bitPosition": 1, "label": "CUTOFF"},
+                {"bitPosition": 2, "label": "STARTUP"},
+                {"bitPosition": 4, "label": "PULLUP"},
+                {"bitPosition": 5, "label": "ACTION_INVERTED"},
+                {"bitPosition": 6, "label": "EVENT_INVERTED"}
+              ]
+            },
+            {
+              "type": "NodeVariableBitArray",
+              "nodeVariableIndex": 17,
+              "displayTitle": "Flags",
+              "displaySubTitle": "multi specific flags",
+              "visibilityLogic":{ "nv":16, "equals": 4 },
+              "bitCollection":[
+                {"bitPosition": 0, "label": "TRIGGER_INVERTED"},
+                {"bitPosition": 1, "label": "CUTOFF"},
+                {"bitPosition": 2, "label": "STARTUP"},
+                {"bitPosition": 4, "label": "PULLUP"},
+                {"bitPosition": 5, "label": "ACTION_INVERTED"},
+                {"bitPosition": 6, "label": "EVENT_INVERTED"}
+              ]
+            },
+            {
+              "type": "NodeVariableBitArray",
+              "nodeVariableIndex": 17,
+              "displayTitle": "Flags",
+              "displaySubTitle": "analogue specific flags",
+              "visibilityLogic":{ "nv":16, "equals": 5 },
+              "bitCollection":[
+                {"bitPosition": 3, "label": "DISABLE_OFF"},
+                {"bitPosition": 5, "label": "INPUT_DISABLE_SOD_RESPONSE"},
+                {"bitPosition": 6, "label": "EVENT_INVERTED"}
+              ]
+            },
+            {
+              "type": "NodeVariableBitArray",
+              "nodeVariableIndex": 17,
+              "displayTitle": "Flags",
+              "displaySubTitle": "magnet specific flags",
+              "visibilityLogic":{ "nv":16, "equals": 6 },
+              "bitCollection":[
+                {"bitPosition": 3, "label": "DISABLE_OFF"},
+                {"bitPosition": 5, "label": "INPUT_DISABLE_SOD_RESPONSE"},
+                {"bitPosition": 6, "label": "EVENT_INVERTED"}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "eventVariables": [
+  ]
+}
