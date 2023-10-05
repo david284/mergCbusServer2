@@ -287,8 +287,8 @@
               "type": "NodeVariableBitArray",
               "nodeVariableIndex": 17,
               "displayTitle": "Flags",
-              "displaySubTitle": "bounce specific flags",
-              "visibilityLogic":{ "nv":16, "equals": 3 },
+              "displaySubTitle": "bounce & multi specific flags",
+              "visibilityLogic":{ "nv":16, "in": [3, 4] },
               "bitCollection":[
                 {"bitPosition": 0, "label": "TRIGGER_INVERTED"},
                 {"bitPosition": 1, "label": "CUTOFF"},
@@ -302,35 +302,8 @@
               "type": "NodeVariableBitArray",
               "nodeVariableIndex": 17,
               "displayTitle": "Flags",
-              "displaySubTitle": "multi specific flags",
-              "visibilityLogic":{ "nv":16, "equals": 4 },
-              "bitCollection":[
-                {"bitPosition": 0, "label": "TRIGGER_INVERTED"},
-                {"bitPosition": 1, "label": "CUTOFF"},
-                {"bitPosition": 2, "label": "STARTUP"},
-                {"bitPosition": 4, "label": "PULLUP"},
-                {"bitPosition": 5, "label": "ACTION_INVERTED"},
-                {"bitPosition": 6, "label": "EVENT_INVERTED"}
-              ]
-            },
-            {
-              "type": "NodeVariableBitArray",
-              "nodeVariableIndex": 17,
-              "displayTitle": "Flags",
-              "displaySubTitle": "analogue specific flags",
-              "visibilityLogic":{ "nv":16, "equals": 5 },
-              "bitCollection":[
-                {"bitPosition": 3, "label": "DISABLE_OFF"},
-                {"bitPosition": 5, "label": "INPUT_DISABLE_SOD_RESPONSE"},
-                {"bitPosition": 6, "label": "EVENT_INVERTED"}
-              ]
-            },
-            {
-              "type": "NodeVariableBitArray",
-              "nodeVariableIndex": 17,
-              "displayTitle": "Flags",
-              "displaySubTitle": "magnet specific flags",
-              "visibilityLogic":{ "nv":16, "equals": 6 },
+              "displaySubTitle": "analogue & magnet specific flags",
+              "visibilityLogic":{ "nv":16, "in": [5, 6] },
               "bitCollection":[
                 {"bitPosition": 3, "label": "DISABLE_OFF"},
                 {"bitPosition": 5, "label": "INPUT_DISABLE_SOD_RESPONSE"},
@@ -339,23 +312,876 @@
             }
           ]
         },
-        { "displayTitle": "Channel 2"
+        { "displayTitle": "Channel 2",
+          "items": [
+            {
+              "type": "NodeVariableSelect",
+              "nodeVariableIndex": 23,
+              "displayTitle": "I/O type",
+              "displaySubTitle": "",
+              "options": [
+              {"label": "INPUT", "value": 0},
+              {"label": "OUTPUT", "value": 1},
+              {"label": "SERVO", "value": 2},
+              {"label": "BOUNCE", "value": 3},
+              {"label": "MULTI", "value": 4},
+              {"label": "ANALOGUE", "value": 5},
+              {"label": "MAGNET", "value": 6}
+              ]
+            }
+          ]    
         },
-        { "displayTitle": "Channel 3"
+        { "displayTitle": "Channel 3",
+        "items": [
+          {
+            "type": "NodeVariableSelect",
+            "nodeVariableIndex": 30,
+            "displayTitle": "I/O type",
+            "displaySubTitle": "",
+            "options": [
+            {"label": "INPUT", "value": 0},
+            {"label": "OUTPUT", "value": 1},
+            {"label": "SERVO", "value": 2},
+            {"label": "BOUNCE", "value": 3},
+            {"label": "MULTI", "value": 4},
+            {"label": "ANALOGUE", "value": 5},
+            {"label": "MAGNET", "value": 6}
+            ]
+          }
+        ]
         },
-        { "displayTitle": "Channel 4"
+        { "displayTitle": "Channel 4",
+        "items": [
+          {
+            "type": "NodeVariableSelect",
+            "nodeVariableIndex": 37,
+            "displayTitle": "I/O type",
+            "displaySubTitle": "",
+            "options": [
+            {"label": "INPUT", "value": 0},
+            {"label": "OUTPUT", "value": 1},
+            {"label": "SERVO", "value": 2},
+            {"label": "BOUNCE", "value": 3},
+            {"label": "MULTI", "value": 4},
+            {"label": "ANALOGUE", "value": 5},
+            {"label": "MAGNET", "value": 6}
+            ]
+          }
+        ]
         },
-        { "displayTitle": "Channel 5"
+        { "displayTitle": "Channel 5",
+        "items": [
+          {
+            "type": "NodeVariableSelect",
+            "nodeVariableIndex": 44,
+            "displayTitle": "I/O type",
+            "displaySubTitle": "",
+            "options": [
+            {"label": "INPUT", "value": 0},
+            {"label": "OUTPUT", "value": 1},
+            {"label": "SERVO", "value": 2},
+            {"label": "BOUNCE", "value": 3},
+            {"label": "MULTI", "value": 4},
+            {"label": "ANALOGUE", "value": 5},
+            {"label": "MAGNET", "value": 6}
+            ]
+          }
+        ]
         },
-        { "displayTitle": "Channel 6"
+        { "displayTitle": "Channel 6",
+        "items": [
+          {
+            "type": "NodeVariableSelect",
+            "nodeVariableIndex": 51,
+            "displayTitle": "I/O type",
+            "displaySubTitle": "",
+            "options": [
+            {"label": "INPUT", "value": 0},
+            {"label": "OUTPUT", "value": 1},
+            {"label": "SERVO", "value": 2},
+            {"label": "BOUNCE", "value": 3},
+            {"label": "MULTI", "value": 4},
+            {"label": "ANALOGUE", "value": 5},
+            {"label": "MAGNET", "value": 6}
+            ]
+          }
+        ]
         },
-        { "displayTitle": "Channel 7"
+        { "displayTitle": "Channel 7",
+        "items": [
+          {
+            "type": "NodeVariableSelect",
+            "nodeVariableIndex": 58,
+            "displayTitle": "I/O type",
+            "displaySubTitle": "",
+            "options": [
+            {"label": "INPUT", "value": 0},
+            {"label": "OUTPUT", "value": 1},
+            {"label": "SERVO", "value": 2},
+            {"label": "BOUNCE", "value": 3},
+            {"label": "MULTI", "value": 4},
+            {"label": "ANALOGUE", "value": 5},
+            {"label": "MAGNET", "value": 6}
+            ]
+          }
+        ]
         },
-        { "displayTitle": "Channel 8"
+        { "displayTitle": "Channel 8",
+        "items": [
+          {
+            "type": "NodeVariableSelect",
+            "nodeVariableIndex": 65,
+            "displayTitle": "I/O type",
+            "displaySubTitle": "",
+            "options": [
+            {"label": "INPUT", "value": 0},
+            {"label": "OUTPUT", "value": 1},
+            {"label": "SERVO", "value": 2},
+            {"label": "BOUNCE", "value": 3},
+            {"label": "MULTI", "value": 4},
+            {"label": "ANALOGUE", "value": 5},
+            {"label": "MAGNET", "value": 6}
+            ]
+          }
+        ]
         }
       ]
     }
   ],
   "eventVariables": [
+    {
+      "type": "EventVariableComplexSelect",
+      "eventVariableIndex": 1,
+      "displayTitle": "Produced event",
+      "displaySubTitle": "EV1",
+      "options": [
+        {"value": 0, "label": "no event (0)"},
+        {"value": 1, "label": "Startup event (1)"},
+        {"value": 8, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 0, "label": "CH1 - Input Changed"},
+            {"value": 1, "label": "CH1 - Input Changed"},
+            {"value": 2, "label": "CH1 - Reached OFF"},
+            {"value": 3, "label": "CH1 - Input Changed"},
+            {"value": 4, "label": "CH1 - AT1"}
+          ]
+        },
+        {"value": 9, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 0, "label": "CH1 - TWO_ON"},
+            {"value": 2, "label": "CH1 - Reached MID"},
+            {"value": 4, "label": "CH1 - AT2"}
+          ]
+        },
+        {"value": 10, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 2, "label": "CH1 - Reached ON"},
+            {"value": 4, "label": "CH1 - AT3"}
+          ]
+        },
+        {"value": 11, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 4, "label": "CH1 - AT4"}
+          ]
+        },
+        {"value": 12, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 0, "label": "CH2 - Input Changed"},
+            {"value": 1, "label": "CH2 - Input Changed"},
+            {"value": 2, "label": "CH2 - Reached OFF"},
+            {"value": 3, "label": "CH2 - Input Changed"},
+            {"value": 4, "label": "Ch2 - AT1"}
+          ]
+        },
+        {"value": 13, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 0, "label": "Ch2 - TWO_ON"},
+            {"value": 2, "label": "Ch2 - Reached MID"},
+            {"value": 4, "label": "Ch2 - AT2"}
+          ]
+        },
+        {"value": 14, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 2, "label": "Ch2 - Reached ON"},
+            {"value": 4, "label": "Ch2 - AT3"}
+          ]
+        },
+        {"value": 15, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 4, "label": "Ch2 - AT4"}
+          ]
+        },
+        {"value": 16, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 0, "label": "CH3 - Input Changed"},
+            {"value": 1, "label": "CH3 - Input Changed"},
+            {"value": 2, "label": "CH3 - Reached OFF"},
+            {"value": 3, "label": "CH3 - Input Changed"},
+            {"value": 4, "label": "CH3 - AT1"}
+          ]
+        },
+        {"value": 17, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 0, "label": "CH3 - TWO_ON"},
+            {"value": 2, "label": "CH3 - Reached MID"},
+            {"value": 4, "label": "CH3 - AT2"}
+          ]
+        },
+        {"value": 18, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 2, "label": "CH3 - Reached ON"},
+            {"value": 4, "label": "CH3 - AT3"}
+          ]
+        },
+        {"value": 19, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 4, "label": "CH3 - AT4"}
+          ]
+        },
+        {"value": 20, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 0, "label": "CH4 - Input Changed"},
+            {"value": 1, "label": "CH4 - Input Changed"},
+            {"value": 2, "label": "CH4 - Reached OFF"},
+            {"value": 3, "label": "CH4 - Input Changed"},
+            {"value": 4, "label": "CH4 - AT1"}
+          ]
+        },
+        {"value": 21, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 0, "label": "CH4 - TWO_ON"},
+            {"value": 2, "label": "CH4 - Reached MID"},
+            {"value": 4, "label": "CH4 - AT2"}
+          ]
+        },
+        {"value": 22, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 2, "label": "CH4 - Reached ON"},
+            {"value": 4, "label": "CH4 - AT3"}
+          ]
+        },
+        {"value": 23, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 4, "label": "CH4 - AT4"}
+          ]
+        },
+        {"value": 24, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 0, "label": "CH5 - Input Changed"},
+            {"value": 1, "label": "CH5 - Input Changed"},
+            {"value": 2, "label": "CH5 - Reached OFF"},
+            {"value": 3, "label": "CH5 - Input Changed"},
+            {"value": 4, "label": "CH5 - AT1"}
+          ]
+        },
+        {"value": 25, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 0, "label": "CH5 - TWO_ON"},
+            {"value": 2, "label": "CH5 - Reached MID"},
+            {"value": 4, "label": "CH5 - AT2"}
+          ]
+        },
+        {"value": 26, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 2, "label": "CH5 - Reached ON"},
+            {"value": 4, "label": "CH5 - AT3"}
+          ]
+        },
+        {"value": 27, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 4, "label": "CH5 - AT4"}
+          ]
+        },
+        {"value": 28, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 0, "label": "CH6 - Input Changed"},
+            {"value": 1, "label": "CH6 - Input Changed"},
+            {"value": 2, "label": "CH6 - Reached OFF"},
+            {"value": 3, "label": "CH6 - Input Changed"},
+            {"value": 4, "label": "CH6 - AT1"}
+          ]
+        },
+        {"value": 29, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 0, "label": "CH6 - TWO_ON"},
+            {"value": 2, "label": "CH6 - Reached MID"},
+            {"value": 4, "label": "CH6 - AT2"}
+          ]
+        },
+        {"value": 30, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 2, "label": "CH6 - Reached ON"},
+            {"value": 4, "label": "CH6 - AT3"}
+          ]
+        },
+        {"value": 31, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 4, "label": "CH6 - AT4"}
+          ]
+        },
+        {"value": 32, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 0, "label": "CH7 - Input Changed"},
+            {"value": 1, "label": "CH7 - Input Changed"},
+            {"value": 2, "label": "CH7 - Reached OFF"},
+            {"value": 3, "label": "CH7 - Input Changed"},
+            {"value": 4, "label": "CH7 - AT1"}
+          ]
+        },
+        {"value": 33, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 0, "label": "CH7 - TWO_ON"},
+            {"value": 2, "label": "CH7 - Reached MID"},
+            {"value": 4, "label": "CH7 - AT2"}
+          ]
+        },
+        {"value": 34, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 2, "label": "CH7 - Reached ON"},
+            {"value": 4, "label": "CH7 - AT3"}
+          ]
+        },
+        {"value": 35, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 4, "label": "CH7 - AT4"}
+          ]
+        },
+        {"value": 36, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 0, "label": "CH8 - Input Changed"},
+            {"value": 1, "label": "CH8 - Input Changed"},
+            {"value": 2, "label": "CH8 - Reached OFF"},
+            {"value": 3, "label": "CH8 - Input Changed"},
+            {"value": 4, "label": "CH8 - AT1"}
+          ]
+        },
+        {"value": 37, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 0, "label": "CH8 - TWO_ON"},
+            {"value": 2, "label": "CH8 - Reached MID"},
+            {"value": 4, "label": "CH8 - AT2"}
+          ]
+        },
+        {"value": 38, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 2, "label": "CH8 - Reached ON"},
+            {"value": 4, "label": "CH8 - AT3"}
+          ]
+        },
+        {"value": 39, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 4, "label": "CH8 - AT4"}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "EventVariableComplexSelect",
+      "eventVariableIndex": 2,
+      "displayTitle": "Consumed event",
+      "displaySubTitle": "EV2",
+      "options": [
+        {"value": 0, "label": "no action"},
+        {"value": 1, "label": "Consumed SOD"},
+        {"value": 2, "label": "WAIT05"},
+        {"value": 3, "label": "WAIT1"},
+        {"value": 4, "label": "WAIT2"},
+        {"value": 5, "label": "WAIT5"},
+        {"value": 8, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 1, "label": "CH1 - Change"},
+            {"value": 2, "label": "CH1 - Change"},
+            {"value": 3, "label": "CH1 - Change"},
+            {"value": 4, "label": "CH1 - AT1"}
+          ]
+        },
+        {"value": 9, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 1, "label": "CH1 - ON"},
+            {"value": 2, "label": "CH1 - ON"},
+            {"value": 3, "label": "CH1 - ON"},
+            {"value": 4, "label": "CH1 - AT2"}
+          ]
+        },
+        {"value": 10, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 1, "label": "CH1 - OFF"},
+            {"value": 2, "label": "CH1 - OFF"},
+            {"value": 3, "label": "CH1 - OFF"},
+            {"value": 4, "label": "CH1 - AT3"}
+          ]
+        },
+        {"value": 11, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 1, "label": "CH1 - FLASH"},
+            {"value": 4, "label": "CH1 - AT4"}
+          ]
+        },
+        {"value": 12, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 1, "label": "CH1 - !Change"},
+            {"value": 2, "label": "CH1 - !Change"},
+            {"value": 3, "label": "CH1 - !Change"}
+          ]
+        },
+        {"value": 13, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 1, "label": "CH2 - Change"},
+            {"value": 2, "label": "CH2 - Change"},
+            {"value": 3, "label": "CH2 - Change"},
+            {"value": 4, "label": "CH2 - AT1"}
+          ]
+        },
+        {"value": 14, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 1, "label": "CH2 - ON"},
+            {"value": 2, "label": "CH2 - ON"},
+            {"value": 3, "label": "CH2 - ON"},
+            {"value": 4, "label": "CH2 - AT2"}
+          ]
+        },
+        {"value": 15, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 1, "label": "CH2 - OFF"},
+            {"value": 2, "label": "CH2 - OFF"},
+            {"value": 3, "label": "CH2 - OFF"},
+            {"value": 4, "label": "CH2 - AT3"}
+          ]
+        },
+        {"value": 16, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 1, "label": "CH2 - FLASH"},
+            {"value": 4, "label": "CH2 - AT4"}
+          ]
+        },
+        {"value": 17, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 1, "label": "CH2 - !Change"},
+            {"value": 2, "label": "CH2 - !Change"},
+            {"value": 3, "label": "CH2 - !Change"}
+          ]
+        },
+        {"value": 18, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 1, "label": "CH3 - Change"},
+            {"value": 2, "label": "CH3 - Change"},
+            {"value": 3, "label": "CH3 - Change"},
+            {"value": 4, "label": "CH3 - AT1"}
+          ]
+        },
+        {"value": 19, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 1, "label": "CH3 - ON"},
+            {"value": 2, "label": "CH3 - ON"},
+            {"value": 3, "label": "CH3 - ON"},
+            {"value": 4, "label": "CH3 - AT2"}
+          ]
+        },
+        {"value": 20, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 1, "label": "CH3 - OFF"},
+            {"value": 2, "label": "CH3 - OFF"},
+            {"value": 3, "label": "CH3 - OFF"},
+            {"value": 4, "label": "CH3 - AT3"}
+          ]
+        },
+        {"value": 21, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 1, "label": "CH3 - FLASH"},
+            {"value": 4, "label": "CH3 - AT4"}
+          ]
+        },
+        {"value": 22, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 1, "label": "CH3 - !Change"},
+            {"value": 2, "label": "CH3 - !Change"},
+            {"value": 3, "label": "CH3 - !Change"}
+          ]
+        },
+        {"value": 23, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 1, "label": "CH4 - Change"},
+            {"value": 2, "label": "CH4 - Change"},
+            {"value": 3, "label": "CH4 - Change"},
+            {"value": 4, "label": "CH4 - AT1"}
+          ]
+        },
+        {"value": 24, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 1, "label": "CH4 - ON"},
+            {"value": 2, "label": "CH4 - ON"},
+            {"value": 3, "label": "CH4 - ON"},
+            {"value": 4, "label": "CH4 - AT2"}
+          ]
+        },
+        {"value": 25, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 1, "label": "CH4 - OFF"},
+            {"value": 2, "label": "CH4 - OFF"},
+            {"value": 3, "label": "CH4 - OFF"},
+            {"value": 4, "label": "CH4 - AT3"}
+          ]
+        },
+        {"value": 26, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 1, "label": "CH4 - FLASH"},
+            {"value": 4, "label": "CH4 - AT4"}
+          ]
+        },
+        {"value": 27, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 1, "label": "CH4 - !Change"},
+            {"value": 2, "label": "CH4 - !Change"},
+            {"value": 3, "label": "CH4 - !Change"}
+          ]
+        },
+        {"value": 28, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 1, "label": "CH5 - Change"},
+            {"value": 2, "label": "CH5 - Change"},
+            {"value": 3, "label": "CH5 - Change"},
+            {"value": 4, "label": "CH5 - AT1"}
+          ]
+        },
+        {"value": 29, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 1, "label": "CH5 - ON"},
+            {"value": 2, "label": "CH5 - ON"},
+            {"value": 3, "label": "CH5 - ON"},
+            {"value": 4, "label": "CH5 - AT2"}
+          ]
+        },
+        {"value": 30, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 1, "label": "CH5 - OFF"},
+            {"value": 2, "label": "CH5 - OFF"},
+            {"value": 3, "label": "CH5 - OFF"},
+            {"value": 4, "label": "CH5 - AT3"}
+          ]
+        },
+        {"value": 31, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 1, "label": "CH5 - FLASH"},
+            {"value": 4, "label": "CH5 - AT4"}
+          ]
+        },
+        {"value": 32, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 1, "label": "CH5 - !Change"},
+            {"value": 2, "label": "CH5 - !Change"},
+            {"value": 3, "label": "CH5 - !Change"}
+          ]
+        },
+        {"value": 33, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 1, "label": "CH6 - Change"},
+            {"value": 2, "label": "CH6 - Change"},
+            {"value": 3, "label": "CH6 - Change"},
+            {"value": 4, "label": "CH6 - AT1"}
+          ]
+        },
+        {"value": 34, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 1, "label": "CH6 - ON"},
+            {"value": 2, "label": "CH6 - ON"},
+            {"value": 3, "label": "CH6 - ON"},
+            {"value": 4, "label": "CH6 - AT2"}
+          ]
+        },
+        {"value": 35, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 1, "label": "CH6 - OFF"},
+            {"value": 2, "label": "CH6 - OFF"},
+            {"value": 3, "label": "CH6 - OFF"},
+            {"value": 4, "label": "CH6 - AT3"}
+          ]
+        },
+        {"value": 36, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 1, "label": "CH6 - FLASH"},
+            {"value": 4, "label": "CH6 - AT4"}
+          ]
+        },
+        {"value": 37, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 1, "label": "CH6 - !Change"},
+            {"value": 2, "label": "CH6 - !Change"},
+            {"value": 3, "label": "CH6 - !Change"}
+          ]
+        },
+        {"value": 38, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 1, "label": "CH7 - Change"},
+            {"value": 2, "label": "CH7 - Change"},
+            {"value": 3, "label": "CH7 - Change"},
+            {"value": 4, "label": "CH7 - AT1"}
+          ]
+        },
+        {"value": 39, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 1, "label": "CH7 - ON"},
+            {"value": 2, "label": "CH7 - ON"},
+            {"value": 3, "label": "CH7 - ON"},
+            {"value": 4, "label": "CH7 - AT2"}
+          ]
+        },
+        {"value": 40, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 1, "label": "CH7 - OFF"},
+            {"value": 2, "label": "CH7 - OFF"},
+            {"value": 3, "label": "CH7 - OFF"},
+            {"value": 4, "label": "CH7 - AT3"}
+          ]
+        },
+        {"value": 41, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 1, "label": "CH7 - FLASH"},
+            {"value": 4, "label": "CH7 - AT4"}
+          ]
+        },
+        {"value": 42, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 1, "label": "CH7 - !Change"},
+            {"value": 2, "label": "CH7 - !Change"},
+            {"value": 3, "label": "CH7 - !Change"}
+          ]
+        },
+        {"value": 43, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 1, "label": "CH8 - Change"},
+            {"value": 2, "label": "CH8 - Change"},
+            {"value": 3, "label": "CH8 - Change"},
+            {"value": 4, "label": "CH8 - AT1"}
+          ]
+        },
+        {"value": 44, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 1, "label": "CH8 - ON"},
+            {"value": 2, "label": "CH8 - ON"},
+            {"value": 3, "label": "CH8 - ON"},
+            {"value": 4, "label": "CH8 - AT2"}
+          ]
+        },
+        {"value": 45, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 1, "label": "CH8 - OFF"},
+            {"value": 2, "label": "CH8 - OFF"},
+            {"value": 3, "label": "CH8 - OFF"},
+            {"value": 4, "label": "CH8 - AT3"}
+          ]
+        },
+        {"value": 46, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 1, "label": "CH8 - FLASH"},
+            {"value": 4, "label": "CH8 - AT4"}
+          ]
+        },
+        {"value": 47, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 1, "label": "CH8 - !Change"},
+            {"value": 2, "label": "CH8 - !Change"},
+            {"value": 3, "label": "CH8 - !Change"}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "EventVariableComplexSelect",
+      "eventVariableIndex": 3,
+      "displayTitle": "Consumed event",
+      "displaySubTitle": "EV3",
+      "options": [
+        {"value": 0, "label": "no action"},
+        {"value": 1, "label": "Consumed SOD"},
+        {"value": 2, "label": "WAIT05"},
+        {"value": 3, "label": "WAIT1"},
+        {"value": 4, "label": "WAIT2"},
+        {"value": 5, "label": "WAIT5"},
+        {"value": 8, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 1, "label": "CH1 - Change"},
+            {"value": 2, "label": "CH1 - Change"},
+            {"value": 3, "label": "CH1 - Change"},
+            {"value": 4, "label": "CH1 - AT1"}
+          ]
+        },
+        {"value": 9, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 1, "label": "CH1 - ON"},
+            {"value": 2, "label": "CH1 - ON"},
+            {"value": 3, "label": "CH1 - ON"},
+            {"value": 4, "label": "CH1 - AT2"}
+          ]
+        },
+        {"value": 10, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 1, "label": "CH1 - OFF"},
+            {"value": 2, "label": "CH1 - OFF"},
+            {"value": 3, "label": "CH1 - OFF"},
+            {"value": 4, "label": "CH1 - AT3"}
+          ]
+        },
+        {"value": 11, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 1, "label": "CH1 - FLASH"},
+            {"value": 4, "label": "CH1 - AT4"}
+          ]
+        },
+        {"value": 12, "complexSelector_NV": "16", "complexOptions": [
+            {"value": 1, "label": "CH1 - !Change"},
+            {"value": 2, "label": "CH1 - !Change"},
+            {"value": 3, "label": "CH1 - !Change"}
+          ]
+        },
+        {"value": 13, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 1, "label": "CH2 - Change"},
+            {"value": 2, "label": "CH2 - Change"},
+            {"value": 3, "label": "CH2 - Change"},
+            {"value": 4, "label": "CH2 - AT1"}
+          ]
+        },
+        {"value": 14, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 1, "label": "CH2 - ON"},
+            {"value": 2, "label": "CH2 - ON"},
+            {"value": 3, "label": "CH2 - ON"},
+            {"value": 4, "label": "CH2 - AT2"}
+          ]
+        },
+        {"value": 15, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 1, "label": "CH2 - OFF"},
+            {"value": 2, "label": "CH2 - OFF"},
+            {"value": 3, "label": "CH2 - OFF"},
+            {"value": 4, "label": "CH2 - AT3"}
+          ]
+        },
+        {"value": 16, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 1, "label": "CH2 - FLASH"},
+            {"value": 4, "label": "CH2 - AT4"}
+          ]
+        },
+        {"value": 17, "complexSelector_NV": "23", "complexOptions": [
+            {"value": 1, "label": "CH2 - !Change"},
+            {"value": 2, "label": "CH2 - !Change"},
+            {"value": 3, "label": "CH2 - !Change"}
+          ]
+        },
+        {"value": 18, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 1, "label": "CH3 - Change"},
+            {"value": 2, "label": "CH3 - Change"},
+            {"value": 3, "label": "CH3 - Change"},
+            {"value": 4, "label": "CH3 - AT1"}
+          ]
+        },
+        {"value": 19, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 1, "label": "CH3 - ON"},
+            {"value": 2, "label": "CH3 - ON"},
+            {"value": 3, "label": "CH3 - ON"},
+            {"value": 4, "label": "CH3 - AT2"}
+          ]
+        },
+        {"value": 20, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 1, "label": "CH3 - OFF"},
+            {"value": 2, "label": "CH3 - OFF"},
+            {"value": 3, "label": "CH3 - OFF"},
+            {"value": 4, "label": "CH3 - AT3"}
+          ]
+        },
+        {"value": 21, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 1, "label": "CH3 - FLASH"},
+            {"value": 4, "label": "CH3 - AT4"}
+          ]
+        },
+        {"value": 22, "complexSelector_NV": "30", "complexOptions": [
+            {"value": 1, "label": "CH3 - !Change"},
+            {"value": 2, "label": "CH3 - !Change"},
+            {"value": 3, "label": "CH3 - !Change"}
+          ]
+        },
+        {"value": 23, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 1, "label": "CH4 - Change"},
+            {"value": 2, "label": "CH4 - Change"},
+            {"value": 3, "label": "CH4 - Change"},
+            {"value": 4, "label": "CH4 - AT1"}
+          ]
+        },
+        {"value": 24, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 1, "label": "CH4 - ON"},
+            {"value": 2, "label": "CH4 - ON"},
+            {"value": 3, "label": "CH4 - ON"},
+            {"value": 4, "label": "CH4 - AT2"}
+          ]
+        },
+        {"value": 25, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 1, "label": "CH4 - OFF"},
+            {"value": 2, "label": "CH4 - OFF"},
+            {"value": 3, "label": "CH4 - OFF"},
+            {"value": 4, "label": "CH4 - AT3"}
+          ]
+        },
+        {"value": 26, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 1, "label": "CH4 - FLASH"},
+            {"value": 4, "label": "CH4 - AT4"}
+          ]
+        },
+        {"value": 27, "complexSelector_NV": "37", "complexOptions": [
+            {"value": 1, "label": "CH4 - !Change"},
+            {"value": 2, "label": "CH4 - !Change"},
+            {"value": 3, "label": "CH4 - !Change"}
+          ]
+        },
+        {"value": 28, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 1, "label": "CH5 - Change"},
+            {"value": 2, "label": "CH5 - Change"},
+            {"value": 3, "label": "CH5 - Change"},
+            {"value": 4, "label": "CH5 - AT1"}
+          ]
+        },
+        {"value": 29, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 1, "label": "CH5 - ON"},
+            {"value": 2, "label": "CH5 - ON"},
+            {"value": 3, "label": "CH5 - ON"},
+            {"value": 4, "label": "CH5 - AT2"}
+          ]
+        },
+        {"value": 30, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 1, "label": "CH5 - OFF"},
+            {"value": 2, "label": "CH5 - OFF"},
+            {"value": 3, "label": "CH5 - OFF"},
+            {"value": 4, "label": "CH5 - AT3"}
+          ]
+        },
+        {"value": 31, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 1, "label": "CH5 - FLASH"},
+            {"value": 4, "label": "CH5 - AT4"}
+          ]
+        },
+        {"value": 32, "complexSelector_NV": "44", "complexOptions": [
+            {"value": 1, "label": "CH5 - !Change"},
+            {"value": 2, "label": "CH5 - !Change"},
+            {"value": 3, "label": "CH5 - !Change"}
+          ]
+        },
+        {"value": 33, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 1, "label": "CH6 - Change"},
+            {"value": 2, "label": "CH6 - Change"},
+            {"value": 3, "label": "CH6 - Change"},
+            {"value": 4, "label": "CH6 - AT1"}
+          ]
+        },
+        {"value": 34, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 1, "label": "CH6 - ON"},
+            {"value": 2, "label": "CH6 - ON"},
+            {"value": 3, "label": "CH6 - ON"},
+            {"value": 4, "label": "CH6 - AT2"}
+          ]
+        },
+        {"value": 35, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 1, "label": "CH6 - OFF"},
+            {"value": 2, "label": "CH6 - OFF"},
+            {"value": 3, "label": "CH6 - OFF"},
+            {"value": 4, "label": "CH6 - AT3"}
+          ]
+        },
+        {"value": 36, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 1, "label": "CH6 - FLASH"},
+            {"value": 4, "label": "CH6 - AT4"}
+          ]
+        },
+        {"value": 37, "complexSelector_NV": "51", "complexOptions": [
+            {"value": 1, "label": "CH6 - !Change"},
+            {"value": 2, "label": "CH6 - !Change"},
+            {"value": 3, "label": "CH6 - !Change"}
+          ]
+        },
+        {"value": 38, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 1, "label": "CH7 - Change"},
+            {"value": 2, "label": "CH7 - Change"},
+            {"value": 3, "label": "CH7 - Change"},
+            {"value": 4, "label": "CH7 - AT1"}
+          ]
+        },
+        {"value": 39, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 1, "label": "CH7 - ON"},
+            {"value": 2, "label": "CH7 - ON"},
+            {"value": 3, "label": "CH7 - ON"},
+            {"value": 4, "label": "CH7 - AT2"}
+          ]
+        },
+        {"value": 40, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 1, "label": "CH7 - OFF"},
+            {"value": 2, "label": "CH7 - OFF"},
+            {"value": 3, "label": "CH7 - OFF"},
+            {"value": 4, "label": "CH7 - AT3"}
+          ]
+        },
+        {"value": 41, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 1, "label": "CH7 - FLASH"},
+            {"value": 4, "label": "CH7 - AT4"}
+          ]
+        },
+        {"value": 42, "complexSelector_NV": "58", "complexOptions": [
+            {"value": 1, "label": "CH7 - !Change"},
+            {"value": 2, "label": "CH7 - !Change"},
+            {"value": 3, "label": "CH7 - !Change"}
+          ]
+        },
+        {"value": 43, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 1, "label": "CH8 - Change"},
+            {"value": 2, "label": "CH8 - Change"},
+            {"value": 3, "label": "CH8 - Change"},
+            {"value": 4, "label": "CH8 - AT1"}
+          ]
+        },
+        {"value": 44, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 1, "label": "CH8 - ON"},
+            {"value": 2, "label": "CH8 - ON"},
+            {"value": 3, "label": "CH8 - ON"},
+            {"value": 4, "label": "CH8 - AT2"}
+          ]
+        },
+        {"value": 45, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 1, "label": "CH8 - OFF"},
+            {"value": 2, "label": "CH8 - OFF"},
+            {"value": 3, "label": "CH8 - OFF"},
+            {"value": 4, "label": "CH8 - AT3"}
+          ]
+        },
+        {"value": 46, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 1, "label": "CH8 - FLASH"},
+            {"value": 4, "label": "CH8 - AT4"}
+          ]
+        },
+        {"value": 47, "complexSelector_NV": "65", "complexOptions": [
+            {"value": 1, "label": "CH8 - !Change"},
+            {"value": 2, "label": "CH8 - !Change"},
+            {"value": 3, "label": "CH8 - !Change"}
+          ]
+        }
+      ]
+    }
   ]
 }
