@@ -673,13 +673,16 @@ class cbusAdmin extends EventEmitter {
                 filename += ".json"
                 this.config.nodes[nodeId]['moduleDescriptorFilename'] = filename
                 // ok - can get file now
+                this.loadConfigFile(filename, nodeId)
+/*
                 try {
                   const variableConfig = jsonfile.readFileSync('./config/modules/' + filename)
                   this.config.nodes[nodeId].variableConfig = variableConfig
                   winston.info({message: 'mergAdminNode: Variable Config: loaded file ' + filename});
                 }catch(err) {
-                  winston.error({message: 'mergAdminNode: Variable Config: erro loading file ' + filename + ' ' + err});
+                  winston.error({message: 'mergAdminNode: Variable Config: error loading file ' + filename + ' ' + err});
                 }
+                */
               }
             } else {
 				winston.warn({message: 'mergAdminNode: Check Variable Config : module component not suitable ' + this.config.nodes[nodeId].component});
@@ -691,6 +694,67 @@ class cbusAdmin extends EventEmitter {
       }
     }
 
+    loadConfigFile(filename, nodeId){
+        var variableConfig = {}
+        try {
+            variableConfig = jsonfile.readFileSync('./config/modules/' + filename)
+            this.config.nodes[nodeId].variableConfig = variableConfig
+            winston.info({message: 'mergAdminNode: Variable Config: loaded file ' + filename});
+          }catch(err) {
+            winston.error({message: 'mergAdminNode: Variable Config: error loading file ' + filename + ' ' + err});
+          }
+        if (variableConfig.repeatBlock != 'undefined'){
+            winston.info({message: 'mergAdminNode: Variable Config: repeatBlock ' + JSON.stringify(variableConfig.repeatBlock)});
+        }
+        var results = this.findPathsToKey({obj: variableConfig, key: "repeatBlock"})
+        winston.info({message: 'mergAdminNode: Variable Config: findPathsToKey - results count ' + results.length});
+        for (var i in results){
+            winston.info({message: 'mergAdminNode: Variable Config: Path ' + i + '  ' + JSON.stringify(results[i])});
+        }
+    }
+
+    findPathsToKey(options) {
+        // findPathsToKey({ obj: objWithDuplicates, key: "d" })
+        let results = [];
+      
+        (function findKey({
+          key,
+          obj,
+          pathToKey,
+        }) {
+          const oldPath = `${pathToKey ? pathToKey + "." : ""}`;
+          if (obj.hasOwnProperty(key)) {
+            results.push(`${oldPath}${key}`);
+          }
+      
+          if (obj !== null && typeof obj === "object" && !Array.isArray(obj)) {
+            for (const k in obj) {
+              if (obj.hasOwnProperty(k)) {
+                if (Array.isArray(obj[k])) {
+                  for (let j = 0; j < obj[k].length; j++) {
+                    findKey({
+                      obj: obj[k][j],
+                      key,
+                      pathToKey: `${oldPath}${k}[${j}]`,
+                    });
+                  }
+                }
+      
+                if (obj[k] !== null && typeof obj[k] === "object") {
+                  findKey({
+                    obj: obj[k],
+                    key,
+                    pathToKey: `${oldPath}${k}`,
+                  });
+                }
+              }
+            }
+          }
+        })(options);
+      
+        return results;
+      }
+      
 
     QNN() {//Query Node Number
         winston.info({message: 'mergAdminNode: QNN '})
