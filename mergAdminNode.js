@@ -19,7 +19,8 @@ class cbusAdmin extends EventEmitter {
         super();
 //        const setup = jsonfile.readFileSync(LAYOUT_PATH  + 'nodeConfig.json')
         this.configFile = 'config/' + LAYOUT_PATH + '/nodeConfig.json'
-        this.config = jsonfile.readFileSync(this.configFile)
+//        this.config = jsonfile.readFileSync(this.configFile)
+        this.config = {}
         const merg = jsonfile.readFileSync('./config/mergConfig.json')
         this.merg = merg
         const Service_Definitions = jsonfile.readFileSync('./config/Service_Definitions.json')
@@ -32,7 +33,7 @@ class cbusAdmin extends EventEmitter {
         this.pr1 = 2
         this.pr2 = 3
         this.canId = 60
-        //this.config.nodes = {}
+        this.config.nodes = {}
         this.config.events = {}
         this.cbusErrors = {}
         this.cbusNoSupport = {}
