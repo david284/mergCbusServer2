@@ -3,6 +3,7 @@
 const winston = require('./config/winston.js')	// use config from root instance
 const fs = require('fs');
 const jsonfile = require('jsonfile')
+const packageInfo = require('./package.json')
 
 //const packageFile = jsonfile.readFileSync('./package.json')
 
@@ -201,15 +202,14 @@ exports.socketServer = function(NET_ADDRESS,LAYOUT_NAME,JSON_PORT,SOCKET_PORT) {
         })
 		
         socket.on('REQUEST_VERSION', function(){
-			winston.info({message: `socketServer: REQUEST_VERSION ${JSON.stringify(packageFile)}`});
-            const versionArray = packageFile.version.toString().split(".");
-			let version = {
-				'major': versionArray[0],
-				'minor': versionArray[1],
-				'patch': versionArray[2],
-				}
-
-            io.emit('VERSION', version)
+          winston.info({message: 'socketServer: REQUEST_VERSION ' + JSON.stringify(packageInfo)});
+          let version = {
+            'App': packageInfo.version,
+            'API': '0.0.1',
+            'node': process.version
+          }
+          io.emit('VERSION', version)
+          winston.info({message: 'socketServer: send VERSION ' + JSON.stringify(version)});
         })
 
         socket.on('PROGRAM_NODE', function(data){

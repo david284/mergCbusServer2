@@ -137,6 +137,26 @@
 		}
 
 	},
+	"7":{
+		"name":"New Event Teaching Service",
+		"version":{ 
+			"0": {
+			},
+			"1": {
+			}
+		}
+
+	},
+	"8":{
+		"name":"Consume Own Events Service",
+		"version":{ 
+			"0": {
+			},
+			"1": {
+			}
+		}
+
+	},
 	"9":{
 		"name":"Event Acknowledge Service"
 	},
